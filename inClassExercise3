@@ -1,0 +1,32 @@
+//play different sounds with different keys
+var mySound;
+
+function preload() {
+  mySound1 = loadSound('hyena-laugh_daniel-simion.mp3');
+  mySound2 = loadSound('fire.mp3');
+}
+
+function setup() { 
+  mySound1.setVolume(0.1);
+  mySound1.play();
+  createCanvas(100, 100);
+}
+
+function draw() {
+  if (mySound1.isPlaying()) {
+    background(240);
+  } else if (mySound2.isPlaying()) {
+    background(120);
+  }
+}
+
+
+function keyPressed() {
+  if (key == 'l') {
+  mySound1.play();
+  print('playing mySound1');
+  } else if (key == '2') {
+  mySound2.play();
+  print('playing mySound2');
+  }
+}
